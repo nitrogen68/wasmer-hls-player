@@ -1,14 +1,12 @@
 [package]
-name = "wasmer-hls-player"
-version = "1.0.0"
-description = "HLS Player"
+name = "your-wasmer-username/your-app-name"
+version = "0.1.0"
+description = "My static website"
 
-[[module]]
-name = "app"
-source = "."
+[dependencies]
+"wasmer/static-web-server" = "^1"
 
 [fs]
-"/" = "."
-
-[web]
-public = "."
+# Change "public" to wherever your index.html lives 
+# (e.g., "dist", "build", or "." if it's right in the root folder)
+public = "public" 
