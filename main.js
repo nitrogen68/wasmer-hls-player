@@ -1,14 +1,14 @@
-export default {
-  async fetch(request) {
+import { execSync } from "child_process";
 
-    return new Response(
-      await fetch(new URL("./index.html", import.meta.url)).then(r=>r.text()),
-      {
-        headers: {
-          "content-type": "text/html"
-        }
-      }
-    );
+export default {
+  async fetch() {
+
+    try {
+      const out = execSync("ffmpeg -version").toString();
+      return new Response(out);
+    } catch(e){
+      return new Response("FFmpeg NOT installed");
+    }
 
   }
 };
