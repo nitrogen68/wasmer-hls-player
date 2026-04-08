@@ -44,17 +44,18 @@ Stream Video
 function play(){
 
 const url=document.getElementById("url").value;
+
+const proxy =
+location.origin + "?stream=" + encodeURIComponent(url);
+
 const video=document.getElementById("video");
 
 if(Hls.isSupported()){
-
 const hls=new Hls();
-
-hls.loadSource(url);
+hls.loadSource(proxy);
 hls.attachMedia(video);
-
 }else{
-video.src=url;
+video.src=proxy;
 }
 
 }
