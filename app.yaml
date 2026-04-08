@@ -1,0 +1,11 @@
+kind: wasmer.io/App.v0
+name: hls-stream-player
+
+package: .
+
+scaling:
+  mode: single_concurrency
+
+routes:
+  - pattern: /
+    handler: http
