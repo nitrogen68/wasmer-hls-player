@@ -1,0 +1,7 @@
+{
+  "name": "wasmer-hls-player",
+  "version": "1.0.0",
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.6"
+  }
+}
