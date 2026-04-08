@@ -38,7 +38,16 @@ Stream Video
 <video id="video" controls class="w-full rounded"></video>
 
 </div>
+<script type="module">
+import { createFFmpeg, fetchFile } 
+from "https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.6/dist/ffmpeg.min.js";
 
+const ffmpeg = createFFmpeg({ log:true });
+
+await ffmpeg.load();
+
+console.log("FFmpeg Loaded");
+</script>
 <script>
 
 function play(){
