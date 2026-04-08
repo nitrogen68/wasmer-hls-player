@@ -1,0 +1,14 @@
+[package]
+name = "wasmer-hls-player"
+version = "1.0.0"
+description = "HLS Player"
+
+[[module]]
+name = "app"
+source = "."
+
+[fs]
+"/" = "."
+
+[web]
+public = "."
