@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Wasmer HLS Player</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+</head>
+
+<body class="bg-black text-white min-h-screen flex flex-col items-center p-6">
+
+<h1 class="text-2xl font-bold mb-6">
+HLS Stream Player
+</h1>
+
+<div class="w-full max-w-xl space-y-4">
+
+<input
+id="url"
+placeholder="Paste m3u8 URL..."
+class="w-full p-3 rounded bg-gray-800 border border-gray-700"
+/>
+
+<button
+onclick="play()"
+class="w-full bg-blue-600 p-3 rounded">
+Stream Video
+</button>
+
+</div>
+
+<div class="mt-8 w-full max-w-4xl">
+
+<video id="video" controls class="w-full rounded"></video>
+
+</div>
+
+<script>
+
+function play(){
+
+const url=document.getElementById("url").value;
+const video=document.getElementById("video");
+
+if(Hls.isSupported()){
+
+const hls=new Hls();
+
+hls.loadSource(url);
+hls.attachMedia(video);
+
+}else{
+video.src=url;
+}
+
+}
+
+</script>
+
+</body>
+</html>
